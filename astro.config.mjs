@@ -39,10 +39,16 @@ export default defineConfig({
   ],
   env: {
     schema: {
+      LASTFM_ENABLED: envField.boolean({
+        context: 'server',
+        access: 'public',
+        optional: true,
+        default: true,
+      }),
       LASTFM_API_KEY: envField.string({
         context: 'server',
         access: 'secret',
-        optional: false
+        optional: true,
       }),
       // Cache provider: 'filesystem' or 'kv'
       CACHE_PROVIDER: envField.enum({
