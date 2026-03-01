@@ -1,3 +1,10 @@
+## [1.2.0](https://github.com/jee-r/patchwork-astro/compare/v1.1.0...v1.2.0) (2026-03-01)
+
+### Features
+
+* **lastfm:** add LASTFM_ENABLED env var to toggle provider ([e36d698](https://github.com/jee-r/patchwork-astro/commit/e36d698a5c1fb946907a96fd23a4b9a3afddd22c))
+* **patchwork:** enforce LASTFM_ENABLED check, set listenbrainz as default, normalize username to lowercase ([b7828cb](https://github.com/jee-r/patchwork-astro/commit/b7828cb5d38582c07668415e8132dec8b5cd2a8b))
+* **ui:** conditionally render provider fieldset based on LASTFM_ENABLED ([8f351fd](https://github.com/jee-r/patchwork-astro/commit/8f351fdc077e3a03a1116f141d99da3a2415dd86))
 ## [1.1.0](https://github.com/jee-r/patchwork-astro/compare/v1.0.0...v1.1.0) (2026-02-28)
 
 ### Features
