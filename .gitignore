@@ -31,3 +31,4 @@ metadata.json
 
 # jetbrains setting folder
 .idea/
+.vercel
