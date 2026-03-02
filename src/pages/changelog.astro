@@ -2,6 +2,8 @@
 import { Content } from '../../CHANGELOG.md';
 import '../styles/main.css';
 import pkg from '../../package.json';
+
+const ogImage = `${Astro.url.origin}/assets/og-image.jpg`;
 ---
 
 <!DOCTYPE html>
@@ -10,6 +12,17 @@ import pkg from '../../package.json';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Changelog - Top Albums Patchwork Generator</title>
+    <meta name="description" content="Changelog for Top Albums Patchwork Generator" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:title" content="Changelog - Top Albums Patchwork Generator" />
+    <meta property="og:description" content="Changelog for Top Albums Patchwork Generator" />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content={ogImage} />
 
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
     <link rel="icon" type="image/png" href="/assets/favicon.png">
