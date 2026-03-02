@@ -1,6 +1,8 @@
-import { kv } from '@vercel/kv';
+import { Redis } from '@upstash/redis';
 import type { CacheProvider } from './cache-provider';
 import type { CacheEntry } from './cache-manager';
+
+const redis = Redis.fromEnv();
 
 export class KVCache implements CacheProvider {
   private readonly IMG_PREFIX = 'cache:img:';
@@ -10,17 +12,17 @@ export class KVCache implements CacheProvider {
     try {
       // Fetch image and metadata in parallel
       const [cached, metadata] = await Promise.all([
-        kv.get<string>(`${this.IMG_PREFIX}${key}`),
-        kv.get<CacheEntry>(`${this.META_PREFIX}${key}`)
+        redis.get<string>(`${this.IMG_PREFIX}${key}`),
+        redis.get<CacheEntry>(`${this.META_PREFIX}${key}`)
       ]);
 
       if (!cached || !metadata) {
         // Clean up orphaned data
         if (cached && !metadata) {
-          await kv.del(`${this.IMG_PREFIX}${key}`);
+          await redis.del(`${this.IMG_PREFIX}${key}`);
         }
         if (!cached && metadata) {
-          await kv.del(`${this.META_PREFIX}${key}`);
+          await redis.del(`${this.META_PREFIX}${key}`);
         }
         return null;
       }
@@ -34,7 +36,7 @@ export class KVCache implements CacheProvider {
       const remainingTTL = Math.max(0, metadata.ttl - age);
       const ttlSeconds = Math.ceil(remainingTTL / 1000);
 
-      await kv.set(`${this.META_PREFIX}${key}`, metadata, { ex: ttlSeconds });
+      await redis.set(`${this.META_PREFIX}${key}`, metadata, { ex: ttlSeconds });
 
       // Decode from base64
       return Buffer.from(cached, 'base64');
@@ -62,8 +64,8 @@ export class KVCache implements CacheProvider {
 
       // Store both image and metadata with same TTL (auto-cleanup)
       await Promise.all([
-        kv.set(`${this.IMG_PREFIX}${key}`, base64, { ex: ttlSeconds }),
-        kv.set(`${this.META_PREFIX}${key}`, entry, { ex: ttlSeconds })
+        redis.set(`${this.IMG_PREFIX}${key}`, base64, { ex: ttlSeconds }),
+        redis.set(`${this.META_PREFIX}${key}`, entry, { ex: ttlSeconds })
       ]);
 
       const ttlHours = Math.round(ttl / 3600000);
@@ -78,8 +80,8 @@ export class KVCache implements CacheProvider {
     try {
       // Delete both image and metadata
       await Promise.all([
-        kv.del(`${this.IMG_PREFIX}${key}`),
-        kv.del(`${this.META_PREFIX}${key}`)
+        redis.del(`${this.IMG_PREFIX}${key}`),
+        redis.del(`${this.META_PREFIX}${key}`)
       ]);
       console.log(`🗑️  Deleted (KV): ${key}`);
     } catch (error) {
@@ -94,7 +96,7 @@ export class KVCache implements CacheProvider {
       let cursor: string | number = 0;
 
       do {
-        const result: [string | number, string[]] = await kv.scan(cursor, {
+        const result: [string | number, string[]] = await redis.scan(cursor, {
           match: `${this.META_PREFIX}*`,
           count: 100
         });
@@ -109,7 +111,7 @@ export class KVCache implements CacheProvider {
       }
 
       const entries = await Promise.all(
-        keys.map(key => kv.get<CacheEntry>(key))
+        keys.map(key => redis.get<CacheEntry>(key))
       );
 
       // Filter out null entries (expired between scan and get)
