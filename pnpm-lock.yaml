@@ -10,22 +10,22 @@ importers:
     dependencies:
       '@astrojs/node':
         specifier: ^9.5.4
-        version: 9.5.5(astro@5.18.2(@types/node@25.9.2)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3))
+        version: 9.5.5(astro@5.18.2(@types/node@25.9.3)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3))
       '@astrojs/vercel':
         specifier: ^9.0.4
-        version: 9.0.5(astro@5.18.2(@types/node@25.9.2)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3))(rollup@4.60.4)
+        version: 9.0.5(astro@5.18.2(@types/node@25.9.3)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3))(rollup@4.60.4)
       '@types/node':
         specifier: ^25.0.3
-        version: 25.9.2
+        version: 25.9.3
       '@upstash/redis':
         specifier: ^1.36.3
         version: 1.38.0
       astro:
         specifier: ^5.18.0
-        version: 5.18.2(@types/node@25.9.2)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3)
+        version: 5.18.2(@types/node@25.9.3)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3)
       astro-matomo:
         specifier: ^1.9.0
-        version: 1.10.0(astro@5.18.2(@types/node@25.9.2)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3))
+        version: 1.10.0(astro@5.18.2(@types/node@25.9.3)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3))
       sharp:
         specifier: ^0.35.0
         version: 0.35.0
@@ -952,8 +952,8 @@ packages:
   '@types/nlcst@2.0.3':
     resolution: {integrity: sha512-vSYNSDe6Ix3q+6Z7ri9lyWqgGhJTmzRjZRqyq15N0Z/1/UnVsno9G/N40NBijoYx2seFDIl0+B2mgAb9mezUCA==}
 
-  '@types/node@25.9.2':
-    resolution: {integrity: sha512-G05zqtJhcDLb8uslf5EjCxXg9G1KQxiV8OS0R26IC//Eoyitzqe8z37I7cqvnZlrlSfgocQRfSn/AHBZJJFyGw==}
+  '@types/node@25.9.3':
+    resolution: {integrity: sha512-603BddQMv3pUcr4U2dhujk83N2tTDVr/34wII2B6bJy6g+8WD6yUb11jszNs0gdi4PesVWl7ABt8nYMVpnLUcg==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -2480,10 +2480,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/node@9.5.5(astro@5.18.2(@types/node@25.9.2)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3))':
+  '@astrojs/node@9.5.5(astro@5.18.2(@types/node@25.9.3)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3))':
     dependencies:
       '@astrojs/internal-helpers': 0.7.6
-      astro: 5.18.2(@types/node@25.9.2)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3)
+      astro: 5.18.2(@types/node@25.9.3)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3)
       send: 1.2.1
       server-destroy: 1.0.1
     transitivePeerDependencies:
@@ -2505,14 +2505,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@astrojs/vercel@9.0.5(astro@5.18.2(@types/node@25.9.2)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3))(rollup@4.60.4)':
+  '@astrojs/vercel@9.0.5(astro@5.18.2(@types/node@25.9.3)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3))(rollup@4.60.4)':
     dependencies:
       '@astrojs/internal-helpers': 0.7.6
       '@vercel/analytics': 1.6.1
       '@vercel/functions': 2.2.13
       '@vercel/nft': 0.30.4(rollup@4.60.4)
       '@vercel/routing-utils': 5.3.3
-      astro: 5.18.2(@types/node@25.9.2)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3)
+      astro: 5.18.2(@types/node@25.9.3)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3)
       esbuild: 0.25.12
       tinyglobby: 0.2.15
     transitivePeerDependencies:
@@ -3101,7 +3101,7 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  '@types/node@25.9.2':
+  '@types/node@25.9.3':
     dependencies:
       undici-types: 7.24.6
 
@@ -3201,11 +3201,11 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro-matomo@1.10.0(astro@5.18.2(@types/node@25.9.2)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3)):
+  astro-matomo@1.10.0(astro@5.18.2(@types/node@25.9.3)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3)):
     dependencies:
-      astro: 5.18.2(@types/node@25.9.2)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3)
+      astro: 5.18.2(@types/node@25.9.3)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3)
 
-  astro@5.18.2(@types/node@25.9.2)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3):
+  astro@5.18.2(@types/node@25.9.3)(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)(rollup@4.60.4)(typescript@5.9.3):
     dependencies:
       '@astrojs/compiler': 2.13.1
       '@astrojs/internal-helpers': 0.7.6
@@ -3262,8 +3262,8 @@ snapshots:
       unist-util-visit: 5.1.0
       unstorage: 1.17.5(@upstash/redis@1.38.0)(@vercel/functions@2.2.13)
       vfile: 6.0.3
-      vite: 6.4.2(@types/node@25.9.2)
-      vitefu: 1.1.3(vite@6.4.2(@types/node@25.9.2))
+      vite: 6.4.2(@types/node@25.9.3)
+      vitefu: 1.1.3(vite@6.4.2(@types/node@25.9.3))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.3
@@ -4873,7 +4873,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite@6.4.2(@types/node@25.9.2):
+  vite@6.4.2(@types/node@25.9.3):
     dependencies:
       esbuild: 0.25.12
       fdir: 6.5.0(picomatch@4.0.4)
@@ -4882,12 +4882,12 @@ snapshots:
       rollup: 4.60.4
       tinyglobby: 0.2.16
     optionalDependencies:
-      '@types/node': 25.9.2
+      '@types/node': 25.9.3
       fsevents: 2.3.3
 
-  vitefu@1.1.3(vite@6.4.2(@types/node@25.9.2)):
+  vitefu@1.1.3(vite@6.4.2(@types/node@25.9.3)):
     optionalDependencies:
-      vite: 6.4.2(@types/node@25.9.2)
+      vite: 6.4.2(@types/node@25.9.3)
 
   web-namespaces@2.0.1: {}
 
